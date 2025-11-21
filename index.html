@@ -10,32 +10,61 @@
     <title>KM Works</title>
 </head>
 <body>
-    <nav>
-        <div class="left-header">
-            <image alt="logo"></image>
-        </div>
+    
+    <div class="left-header">
+        <image alt="logo"></image>
+    </div>
 
-        <div class="right-header">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-            <a href="#"><image alt="facebook"></image></a>
-        </div>
-
+    <nav class="right-header">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#"><image alt="facebook"></image></a></li>
+        </ul>
     </nav>
+    
     <section class="hero" >
         <image alt="logo"></image>
         <h1>KM Workz</h1>
         <p>A Professional Printing Service in Lucena City that Provides a variety of printing service for  your Visual Needs.</p>
     
-    <button id="services_button">Services</button>
-    <button id="contacts_button">Contact</button>
+        <button id="services_button">Services</button>
+        <button id="contacts_button">Contact</button>
+    </section>
+
+    <section class="about">
+        <h1>Founder</h1>
+        <div class="founder">
+            <div class="left-founder">
+                <image alt="founder-image"></image>
+            </div>
+            <div class="right-founder">
+                <h3>KM Workz was established by</h3>
+                <h1>Mr. Romulo A. Oserin Jr.</h1>
+                <h4>In July, 2024</h4>
+                <p>The Printing services started as a Social Work service as ICES Coordinator for Dalubhasaan ng Lungsod ng Lucena. After seeing business potential, KM Workz was established and has been doing printing services to date.</p>
+            </div>
+        </div>
+        <image alt="logo"></image>
+        <h1>Manager</h1>
+        <div class="manager">
+            <div class="left-manager">
+                <image alt="manager-image"></image>
+            </div>
+            <div class="right-manager">
+                <h3>KM Workz is now ran by</h3>
+                <h1>Mr. John Lester F. Casipit</h1>
+                <h4>April, 2025 - Present</h4>
+                <p>As the Printing services grew from T-Shirts, Uniforms, Caps, to mugs and more, Mr. Oserin needed a helping hand and a manager as he was busy being ICES Coordinator and instructor for Dalubhasaan ng Lungsod ng Lucena.</p>
+            </div>
+        </div>
     </section>
 
 
-    <div class="services">
-      
+    <section class="services">
+        <h1>Services</h1>
         <image alt="mugs"></image>
         <h3>Mugs</h3>
         <image alt="caps"></image>
@@ -43,9 +72,39 @@
         <image alt="shirts"></image>
         <h3>Shirts</h3>
 
-    </div>
+    </section>
 
-
+    <section class="inquires">
+        <div class="left-inquires">
+            <h1>Select Product Print Type</h1>
+            <div class="left-button">
+                <button type="button"></button>
+            </div>
+            <image alt="product-image"></image>
+            <div class="right-button">
+                <button type="button">></button>
+            </div>
+        </div>
+        <div class="right-inquires">
+            <h1>Inquiry Information</h1>
+            <form action="">
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="contact_number">Contact Number</label><br>
+                <input type="text" id="contact_number" name="contact_number"><br>
+                <label for="message">Message</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <button type="button">Submit</button>
+             </form>
+        </div>
+    </section>
 
 </body>
+
+<footer>
+    <p>KM Workz © 2025. All rights reserved.</p>
+    <p>KM Workz | KM Printing Services | +639668640133</p>
+</footer>
 </html>
