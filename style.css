@@ -11,6 +11,10 @@ body{
     font-family: 'Jost', sans-serif;
 }
 
+.section{
+    height: 100vh;
+    margin-left: 150px;
+}
 .nav{
     display: flex;
     justify-content: space-between;
@@ -53,7 +57,7 @@ a{
     line-height: 45px;
 }
 #content{
-    margin-left: 150px;
+    height: 100vh;
 }
 .container{
     display: flex;
