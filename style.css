@@ -66,6 +66,7 @@ a{
     font-size: 18px;    
     border-style: solid;
     border-width: 2px;
+    cursor: pointer;
 }
 #contacts{
     color: white;
@@ -73,23 +74,4 @@ a{
     border-color: white;
     border-style: solid;
     border-width: 2px;
-}
-
-#service:hover{
-    color: white;
-    background-color: black;
-    border-color: white;
-    border-style: solid;
-    border-width: 2px;
-    cursor: pointer;
-}
-
-#contacts:hover{
-    color: black;
-    background-color: white;
-    border-color: black;
-    border-style: solid;
-    border-width: 2px;
-    cursor: pointer;
-
 }
