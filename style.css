@@ -16,7 +16,7 @@ font-family:"Monaco", monospace;
 
 .navtabs ul {
     list-style-type: none;
-    
+
     padding: 0px;
     margin: 0px;
     overflow: hidden;
@@ -67,6 +67,7 @@ ul li{
     font-size: 50px;
     position: relative;
     bottom: 80px;
+    margin-left: 20px;
 } 
 #hero p {
     color: white;
@@ -75,6 +76,7 @@ ul li{
     position: relative;
     bottom: 80px;
     text-wrap: balance;
+    margin-left: 20px;
   
 } 
 
