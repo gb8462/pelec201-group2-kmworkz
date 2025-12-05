@@ -383,3 +383,63 @@ width: 60px;
     margin: 20px;
     cursor: pointer;
 }
+
+/* ================= SLIDER FIX ================= */
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1150px; /* fits 3 cards cleanly */
+    margin: auto;
+    padding: 0 60px; /* space for buttons */
+}
+
+/* Row of cards */
+.carousel {
+    display: flex;
+    gap: 25px;              /* tighter gap so 3 fit */
+    overflow: hidden;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+}
+
+/* Card styling fix */
+.cardService {
+    flex: 0 0 31.4%;
+    max-width: 31.4%;
+    background: black;
+    border: 2px solid #8b0000;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/* ================= BUTTONS ================= */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #c12525;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-btn:hover {
+    background: #9d1c1c;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Left button */
+#prevBtn { left: 1px; }
+
+/* Right button */
+#nextBtn { right: 1px; }

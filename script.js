@@ -13,6 +13,9 @@ function loadPage(page) {
             if (content) {
                 content.innerHTML = data;
                 history.pushState({ page: page }, null, "#" + page);
+
+                // ✅ Initialize slider if it exists
+                initSlider();
             } else {
                 console.error("Error: #content div not found in index.html");
             }
@@ -51,3 +54,72 @@ document.addEventListener("click", (e) => {
     }
 
 });
+
+// Slider
+
+function initSlider() {
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+
+    const cards = Array.from(document.querySelectorAll('.cardService'));
+    if (cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth + 20; // adjust for margin/padding
+
+    // Clone cards for seamless infinite scroll
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        carousel.appendChild(clone);
+    });
+
+    let isDragging = false;
+    let startX;
+    let scrollStart;
+
+    // Drag to scroll
+    carousel.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollStart = carousel.scrollLeft;
+        carousel.style.cursor = 'grabbing';
+    });
+
+    carousel.addEventListener('mouseleave', () => isDragging = false);
+    carousel.addEventListener('mouseup', () => {
+        isDragging = false;
+        carousel.style.cursor = 'grab';
+    });
+
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (startX - x); // distance moved
+        carousel.scrollLeft = scrollStart + walk;
+
+        // Handle infinite scroll left/right
+        if (carousel.scrollLeft >= cardWidth * cards.length) {
+            carousel.scrollLeft -= cardWidth * cards.length;
+        } else if (carousel.scrollLeft <= 0) {
+            carousel.scrollLeft += cardWidth * cards.length;
+        }
+    });
+
+    // Buttons
+    document.getElementById("nextBtn").onclick = () => {
+        carousel.scrollLeft += cardWidth;
+        if (carousel.scrollLeft >= cardWidth * cards.length) {
+            carousel.scrollLeft -= cardWidth * cards.length;
+        }
+    };
+
+    document.getElementById("prevBtn").onclick = () => {
+        carousel.scrollLeft -= cardWidth;
+        if (carousel.scrollLeft <= 0) {
+            carousel.scrollLeft += cardWidth * cards.length;
+        }
+    };
+
+    // Make cursor draggable
+    carousel.style.cursor = 'grab';
+}
